@@ -38,7 +38,7 @@ def get_embeddings(
             *sentences, padding=True, truncation=True, return_tensors="pt"
         )
         with torch.inference_mode():
-            with amp.autocast(dtype=torch.bfloat16):
+            with amp.autocast(dtype=torch.float16):
                 outputs = model(**batch_to_cuda(inputs), output_hidden_states=True)
             embeddings = outputs.hidden_states[-1][:, 0].cpu()
         return {"embedding": embeddings}

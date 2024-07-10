@@ -245,7 +245,7 @@ class GeneratorModel(nn.Module):
 
     @property
     def use_amp(self):
-        return self.config.generate_fp16 or self.config.generate_bf16
+        return self.config.generate_fp16
 
     @property
     def amp_dtype(self):

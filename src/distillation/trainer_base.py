@@ -279,4 +279,4 @@ class TrainerBase(metaclass=ABCMeta):
 
     @property
     def amp_dtype(self):
-        return torch.float16 if self.config.fp16 else torch.bfloat16
+        return torch.float16

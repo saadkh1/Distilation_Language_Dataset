@@ -249,4 +249,4 @@ class GeneratorModel(nn.Module):
 
     @property
     def amp_dtype(self):
-        return torch.float16 if self.config.generate_fp16 else torch.bfloat16
+        return torch.float16
